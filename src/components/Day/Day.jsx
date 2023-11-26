@@ -1,11 +1,15 @@
-// Day.jsx
 import React, { useState } from "react";
 import style from "./Day.module.scss";
 import Menu from "./Menu/Menu";
 
-function Day({ day, data }) {
-  const [isMenuVisible, setIsMenuVisible] = useState(false);
+import { useSelector } from "react-redux";
 
+function Day({ day }) {
+  const data = useSelector((state) => state.trainingPlan.days[day]);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const dayName = data.name;
+  const dayExercise = data.exercise;
+  console.log(dayExercise);
   const toggleMenu = () => {
     setIsMenuVisible((prevState) => !prevState);
   };
@@ -16,8 +20,15 @@ function Day({ day, data }) {
 
   return (
     <div className={style.day}>
-      <h2>{data.name}</h2>
-      {day === "monday" && isMenuVisible && (
+      <h2>{dayName}</h2>
+      <ul className={style.exerciseList}>
+        {dayExercise.map((item) => (
+          <li className={style.exerciseItem} key={item}>
+            {item}
+          </li>
+        ))}
+      </ul>
+      {isMenuVisible && (
         <Menu
           day={day}
           isMenuVisible={isMenuVisible}

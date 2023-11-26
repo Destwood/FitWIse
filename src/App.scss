@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +8,16 @@
 }
 
 body {
+  font-family: "Open Sans", sans-serif;
   background-image: radial-gradient(#ffffff 1px, transparent 1px),
     radial-gradient(#ffffff 1px, transparent 1px);
   background-size: 55px 55px;
   background-position: 0 0, 27.5px 27.5px;
   background-color: #282828;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
 }

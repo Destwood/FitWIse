@@ -79,12 +79,36 @@ const defaultState = {
   },
 };
 
-const ADD_TO_CART = "ADD_TO_CART";
+const ADD_EXCERSISE = "ADD_EXCERSISE";
+const REMOVE_EXCERSISE = "REMOVE_EXCERSISE";
 
 const exerciseReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case ADD_TO_CART:
-      return { ...state, cart: [...state.cart, action.payload] };
+    case ADD_EXCERSISE:
+      const { day, exercise } = action.payload;
+      const stateToAdd = {
+        ...state,
+        days: {
+          ...state.days,
+          [day]: {
+            ...state.days[day],
+            exercise: [...state.days[day].exercise, exercise],
+          },
+        },
+      };
+      return stateToAdd;
+    case REMOVE_EXCERSISE:
+      const stateToRemove = {
+        ...state,
+        days: {
+          ...state.days,
+          [day]: {
+            ...state.days[day],
+            exercise: [...state.days[day].exercise, exercise],
+          },
+        },
+      };
+      return stateToRemove;
     default:
       return state;
   }

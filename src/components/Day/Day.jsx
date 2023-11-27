@@ -4,6 +4,7 @@ import Menu from "./Menu/Menu";
 
 import { useSelector } from "react-redux";
 
+// import pen from "../../assets/pen.svg";
 function Day({ day }) {
   const data = useSelector((state) => state.trainingPlan.days[day]);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -20,7 +21,10 @@ function Day({ day }) {
 
   return (
     <div className={style.day}>
-      <h2>{dayName}</h2>
+      <h2>
+        {dayName}
+        {/* <img className={style.icon} src={pen} alt="" /> */}
+      </h2>
       <ul className={style.exerciseList}>
         {dayExercise.map((item) => (
           <li className={style.exerciseItem} key={item}>
@@ -35,7 +39,9 @@ function Day({ day }) {
           onContainerClick={handleContainerClick}
         />
       )}
-      <button onClick={toggleMenu}>Відкрити меню</button>
+      <button className={style.menu} onClick={toggleMenu}>
+        Змінити
+      </button>
     </div>
   );
 }

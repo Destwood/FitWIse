@@ -80,7 +80,7 @@ const defaultState = {
 };
 
 const ADD_EXCERSISE = "ADD_EXCERSISE";
-const REMOVE_EXCERSISE = "REMOVE_EXCERSISE";
+const REMOVE_EXERCISE = "REMOVE_EXERCISE";
 
 const exerciseReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -97,18 +97,22 @@ const exerciseReducer = (state = defaultState, action) => {
         },
       };
       return stateToAdd;
-    case REMOVE_EXCERSISE:
-      const stateToRemove = {
+    case REMOVE_EXERCISE:
+      const updatedExercise = state.days[day].exercise.filter(
+        (item) => item !== exercise
+      );
+      const updatedState = {
         ...state,
         days: {
           ...state.days,
           [day]: {
             ...state.days[day],
-            exercise: [...state.days[day].exercise, exercise],
+            exercise: updatedExercise,
           },
         },
       };
-      return stateToRemove;
+      return updatedState;
+
     default:
       return state;
   }

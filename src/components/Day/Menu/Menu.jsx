@@ -4,10 +4,10 @@ import style from "./Menu.module.scss";
 import Item from "./Item/Item";
 
 function Menu({ day, isMenuVisible, onContainerClick }) {
-  const data = useSelector((state) => state.trainingPlan.exercise);
-  const pushList = data.push || [];
-  const pullList = data.pull || [];
-  const legList = data.leg || [];
+  const data = useSelector((state) => state.trainingPlan);
+  const pushList = data.exercise.push || [];
+  const pullList = data.exercise.pull || [];
+  const legList = data.exercise.leg || [];
   const [currentList, setCurrentList] = useState(pushList);
   const handleClose = (e) => {
     e.stopPropagation();
@@ -21,6 +21,10 @@ function Menu({ day, isMenuVisible, onContainerClick }) {
   return (
     <div className={style.popup} onClick={onContainerClick}>
       <div className={style.content} onClick={(e) => e.stopPropagation()}>
+        <h2>
+          {data.days[day].name}
+          <button></button>
+        </h2>
         <div className={style.list}>
           {currentList.map((item) => (
             <Item key={item} item={item} day={day} />

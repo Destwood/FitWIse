@@ -8,10 +8,32 @@
 }
 
 .exerciseList {
+  min-height: 2rem;
   padding-left: 1rem;
   margin: 1rem 0;
 }
 
 .exerciseItem {
   margin-bottom: 1rem;
+}
+
+.menu {
+  display: block;
+  margin: auto;
+}
+.menu {
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #ffffff30;
+  background-color: #181717;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 0.1s;
+  &:hover {
+    background-color: #222121;
+  }
+  &:active {
+    background-color: #333232;
+  }
 }

@@ -13,17 +13,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  -webkit-backdrop-filter: blur(1rem);
   backdrop-filter: blur(3px);
-  background: #121212d1;
+  background: #121212e3;
   border-radius: 1rem;
   padding: 2rem;
-  gap: 2rem;
 
   width: 90vw;
   height: 94vh;
 }
-
+.h2 {
+  margin: 0;
+}
 .list {
   padding: 3rem;
   height: 95%;

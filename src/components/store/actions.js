@@ -6,7 +6,7 @@ export const addExcersise = (exercise) => {
 };
 export const removeExcersise = (exercise) => {
   return {
-    type: "REMOVE_EXCERSISE",
+    type: "REMOVE_EXERCISE",
     payload: exercise,
   };
 };

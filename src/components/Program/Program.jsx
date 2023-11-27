@@ -8,7 +8,6 @@ function Program() {
   // Object.entries(days).map(([day, data]) => console.log(day));
   return (
     <div className={style.wrapper}>
-      <h1>Програма</h1>
       <div className={style.container}>
         {Object.entries(days).map(([day, data]) =>
           data.exercise.length > 0 ? <Day key={day} day={day} /> : null

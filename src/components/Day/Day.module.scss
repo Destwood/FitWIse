@@ -1,6 +1,6 @@
 .day {
   padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.924);
+  background-color: #121212;
   color: #fff;
   h2 {
     text-align: center;
@@ -14,6 +14,9 @@
 }
 
 .exerciseItem {
+  color: #444;
+  font-size: 1.4rem;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 

@@ -21,10 +21,7 @@ function Menu({ day, isMenuVisible, onContainerClick }) {
   return (
     <div className={style.popup} onClick={onContainerClick}>
       <div className={style.content} onClick={(e) => e.stopPropagation()}>
-        <h2>
-          {data.days[day].name}
-          <button></button>
-        </h2>
+        <h2>{data.days[day].name}</h2>
         <div className={style.list}>
           {currentList.map((item) => (
             <Item key={item} item={item} day={day} />

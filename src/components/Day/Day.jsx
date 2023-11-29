@@ -10,7 +10,6 @@ function Day({ day }) {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const dayName = data.name;
   const dayExercise = data.exercise;
-  console.log(dayExercise);
   const toggleMenu = () => {
     setIsMenuVisible((prevState) => !prevState);
   };
